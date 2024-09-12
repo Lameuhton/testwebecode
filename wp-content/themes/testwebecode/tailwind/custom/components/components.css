@@ -54,3 +54,38 @@
 .entry-content > .alignright {
 	@apply float-right ml-8;
 }
+
+/* Style for cards with hover color animation */
+.card {
+  position: relative;
+  background-color: white;
+  overflow: hidden;
+  transition: background-color 0.5s ease;
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: var(--y, 50%);
+  left: var(--x, 50%);
+  width: 300%;
+  height: 300%;
+  background: radial-gradient(circle, rgba(255, 107, 24, 0.5) 5%, rgba(255, 183, 0, 0.3) 40%, white 70%);
+  transform: translate(-50%, -50%) scale(0);
+  transition: transform 0.6s ease-out, opacity 0.6s ease-out;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.card:hover::before {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+/* Ensures text and image are above the animated background */
+.card img,
+.card h3 {
+  position: relative;
+  z-index: 2; 
+}

@@ -43,7 +43,7 @@ module.exports = {
 			}],
 			tertiary_title: ['24px', {
 			  lineHeight: '42px',
-			  fontWeight: '600',
+			  fontWeight: '400',
 			}],
 			content: ['15px', {
 			  lineHeight: '25px',
