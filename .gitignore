@@ -1,0 +1,14 @@
+# Ignore dependencies from npm and Composer:
+wp-content/themes/testwebecode/node_modules
+wp-content/themes/testwebecode/vendor
+
+# Ignore generated JavaScript files:
+wp-content/themes/testwebecode/*.min.js
+
+# Ignore generated CSS files:
+wp-content/themes/testwebecode/style.css
+wp-content/themes/testwebecode/style-editor.css
+wp-content/themes/testwebecode/style-editor-extra.css
+
+# Ignore the generated zip file:
+wp-content/themes/testwebecode/testwebecode.zip

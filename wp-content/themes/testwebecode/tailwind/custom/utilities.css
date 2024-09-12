@@ -1,0 +1,33 @@
+/**
+ * Custom styles to immediately follow Tailwind’s `utilities` layer
+ *
+ * Add your own utility classes to this theme. Complex utility classes should
+ * be added using Tailwind’s plugin system:
+ *
+ * https://tailwindcss.com/docs/plugins#adding-utilities
+ */
+@layer utilities {
+    .h1 {
+        @apply text-primary_title font-title;
+    }
+    .h2 {
+        @apply text-secondary_title font-title;
+    }
+
+    .h3 {
+        @apply text-tertiary_title font-title;
+    }
+
+    .paragraph {
+        @apply text-content font-text;
+    }
+
+    .button {
+        @apply text-white font-text bg-secondary;
+    }
+    
+    /* Marges de gauche et droite de la page (ajoutées sur chaque section)*/
+    .sides-page-margin {
+        @apply px-5 md:px-36
+    }
+}
