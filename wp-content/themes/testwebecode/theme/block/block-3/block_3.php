@@ -3,7 +3,7 @@
 $title = get_field('title'); // Titre: champ "texte", nom "title"
 $description = get_field('description'); // Description: champ "Éditeur WYSIWYG", nom "description"
 $link = get_field('link'); // Lien: champ "lien", nom "link"
-$services = get_field('repeater_services'); // Répéteur pour services (3 premières max): champ "répéteur", nom "repeater_services"
+$services = get_field('repeater_services'); // Répéteur pour services (4 max): champ "répéteur", nom "repeater_services"
     // Sous-champs:
     // - Icone: champ "image", nom "icon"
     // - Titre: champ "texte", nom "title"

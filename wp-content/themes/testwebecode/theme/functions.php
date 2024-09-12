@@ -192,32 +192,18 @@ if ( function_exists('acf_register_block_type') ) {
 
     function my_acf_init_block_types() {
 
-        acf_register_block_type(array(
-            'name'              => 'test_block',
-            'title'             => __('Test Block'),
-            'description'       => __("Un bloc de test"),
-            'render_template'   => 'block/test-block/test_block.php',
-            'category'          => 'formatting',
-            'icon'              => 'admin-comments',
-            'keywords'          => array('test', 'custom', 'acf', 'block', 'accueil'),
-            'supports'          => array(
-                'align' => true,
-                'anchor' => true,
-                'customClassName' => true,
-            ),
-        ));
-
 		// Block 1
 		// Titre: champ "texte", nom "title"
 		// Zone de texte: champ "Éditeur WYSIWYG", nom "description"
 		// Boutton: champ "lien", nom "button" (tableau)
 		// Image: champ "image", nom "image"
 		// Couleur de fond: champ "True/false", nom "background_color"
+		// Option inverser l'image et le texte: champ "True/False", nom "reverse_text_image"
 
 		acf_register_block_type(array(
             'name'              => 'block_1',
             'title'             => __('Block 1'),
-            'description'       => __("Block 1"),
+            'description'       => __("Bloc avec titre, description sur la gauche et image sur la droite"),
             'render_template'   => 'block/block-1/block_1.php',
             'category'          => 'formatting',
             'icon'              => 'admin-comments',
@@ -234,14 +220,14 @@ if ( function_exists('acf_register_block_type') ) {
 		// Description: champ "Éditeur WYSIWYG", nom "description"
 		// Lien: champ "lien", nom "link"
 		// Répéteur de cards (6 premières max): champ "répéteur", nom "repeater_cards"
-		// Cards:
-		// - Titre: champ "Éditeur WYSIWYG", nom "card_title"
-		// - Icone: champ "image", nom "card_image"
+		// Sous-champs:
+			// - Titre: champ "Éditeur WYSIWYG", nom "card_title"
+			// - Icone: champ "image", nom "card_image"
 		
 		acf_register_block_type(array(
             'name'              => 'block_2',
             'title'             => __('Block 2'),
-            'description'       => __("Block 2"),
+            'description'       => __("Bloc avec des cards de présentation"),
             'render_template'   => 'block/block-2/block_2.php',
             'category'          => 'formatting',
             'icon'              => 'admin-comments',
@@ -257,15 +243,16 @@ if ( function_exists('acf_register_block_type') ) {
 		// Titre: champ "texte", nom "title"
 		// Description: champ "Éditeur WYSIWYG", nom "description"
 		// Lien: champ "lien", nom "link"
-		// Répéteur de cards (6 premières max): champ "répéteur", nom "repeater_cards"
-		// Cards:
-		// - Titre: champ "texte", nom "card_title"
-		// - Icone: champ "image", nom "card_image"
+		// Répéteur pour services (4 max): champ "répéteur", nom "repeater_services"
+		// Sous-champs:
+			// - Icone: champ "image", nom "icon"
+			// - Titre: champ "texte", nom "title"
+			// - Description: champ "zone de texte", nom "description"
 		
 		acf_register_block_type(array(
             'name'              => 'block_3',
             'title'             => __('Block 3'),
-            'description'       => __("Block 3"),
+            'description'       => __("Bloc avec des présentationd de services"),
             'render_template'   => 'block/block-3/block_3.php',
             'category'          => 'formatting',
             'icon'              => 'admin-comments',

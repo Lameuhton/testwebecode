@@ -3,10 +3,11 @@
 $title = get_field('title'); // Titre: champ "texte", nom "title"
 $description = get_field('description'); // Description: champ "Éditeur WYSIWYG", nom "description"
 $link = get_field('link'); // Lien: champ "lien", nom "link"
-$cards = count(get_field('repeater_cards')) > 6 ? array_slice(get_field('repeater_cards'), 0, 6) : get_field('repeater_cards'); // Répéteur de cards (6 premières max): champ "répéteur", nom "repeater_cards"
-    // Cards:
+$cards = get_field('repeater_cards'); // Répéteur de cards (6 max): champ "répéteur", nom "repeater_cards"
+    // Sous-champs:
     // - Titre: champ "Éditeur WYSIWYG", nom "card_title"
     // - Icone: champ "image", nom "card_image"
+
 ?>
 
 <section class="w-full sides-page-margin flex flex-col">
@@ -22,7 +23,7 @@ $cards = count(get_field('repeater_cards')) > 6 ? array_slice(get_field('repeate
             $link_title = $link['title'];
             $link_target = $link['target'] ? $link['target'] : '_self';
             ?>
-            <a class=" font-text text-primary font-bold hover:underline" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $link_title ); ?></a>
+            <a class="font-text text-primary font-bold hover:underline" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $link_title ); ?></a>
         <?php endif; ?>
     </div>
     
@@ -30,7 +31,8 @@ $cards = count(get_field('repeater_cards')) > 6 ? array_slice(get_field('repeate
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-12">
         <?php 
         if( $cards ):
-            foreach( $cards as $card ):
+            for( $i = 0; $i < min(6, count($cards)); $i++ ):
+                $card = $cards[$i];
                 $card_title = $card['card_title'];
                 $card_image = $card['card_image'];
                 ?>
@@ -41,7 +43,7 @@ $cards = count(get_field('repeater_cards')) > 6 ? array_slice(get_field('repeate
                     <h3 class="h3 mb-2 prose self-center"><?php echo $card_title; ?></h3>
                 </div>
                 <?php
-            endforeach;
+            endfor;
         endif;
         ?>
     </div>
