@@ -264,6 +264,31 @@ if ( function_exists('acf_register_block_type') ) {
             ),
         ));
 
+		// Block 4
+		// Titre: champ "texte", nom "title"
+		// Description: champ "Éditeur WYSIWYG", nom "description"
+		// Lien: champ "lien", nom "link"
+		// Répéteur pour services (4 max): champ "répéteur", nom "repeater_services"
+		// Sous-champs:
+			// - Icone: champ "image", nom "icon"
+			// - Titre: champ "texte", nom "title"
+			// - Description: champ "zone de texte", nom "description"
+		
+		acf_register_block_type(array(
+            'name'              => 'block_4',
+            'title'             => __('Block 4'),
+            'description'       => __("Bloc avec des menus cliquables déroulants"),
+            'render_template'   => 'block/block-4/block_4.php',
+            'category'          => 'formatting',
+            'icon'              => 'admin-comments',
+            'keywords'          => array('test', 'custom', 'acf', 'block', 'accueil'),
+            'supports'          => array(
+                'align' => true,
+                'anchor' => true,
+                'customClassName' => true,
+            ),
+        ));
+
     }
     add_action('acf/init', 'my_acf_init_block_types');
 

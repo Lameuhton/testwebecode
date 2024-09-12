@@ -28,7 +28,7 @@ $display_class = $use_reverse ? 'md:flex-row-reverse' : 'md:flex-row';
                 $link_title = $link['title'];
                 $link_target = $link['target'] ? $link['target'] : '_self';
                 ?>
-                <a class="py-4 px-28 mt-12 w-fit rounded-tl-2xl rounded-br-2xl button" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $link_title ); ?></a>
+                <a class="mt-12 button" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $link_title ); ?></a>
             <?php endif; ?>
 
         </div>

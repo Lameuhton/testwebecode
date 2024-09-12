@@ -9,6 +9,7 @@
  * https://esbuild.github.io/
  */
 
+// Block 2 hover animation
 document.addEventListener('DOMContentLoaded', function () {
 	const cards = document.querySelectorAll('.card');
 
@@ -22,4 +23,35 @@ document.addEventListener('DOMContentLoaded', function () {
 			card.style.setProperty('--y', `${y}px`);
 		});
 	});
+});
+
+//block 4 accordion animation
+document.addEventListener('DOMContentLoaded', function() {
+    function toggleAccordion(element) {
+        const content = element.nextElementSibling;
+        const icon = element.querySelector('.icon');
+        
+        if (content.style.maxHeight) {
+            content.style.maxHeight = null;
+            icon.textContent = "+";
+        } else {
+            // Fermer tous les autres éléments ouverts
+            const allAccordions = document.querySelectorAll('.accordion-content');
+            allAccordions.forEach(function(acc) {
+                acc.style.maxHeight = null;
+                acc.previousElementSibling.querySelector('.icon').textContent = "+";
+            });
+
+            // Ouvrir l'élément sélectionné
+            content.style.maxHeight = content.scrollHeight + "px";
+            icon.textContent = "-";
+        }
+    }
+
+    const accordionHeaders = document.querySelectorAll('.accordion-header');
+    accordionHeaders.forEach(function(header) {
+        header.addEventListener('click', function() {
+            toggleAccordion(this);
+        });
+    });
 });

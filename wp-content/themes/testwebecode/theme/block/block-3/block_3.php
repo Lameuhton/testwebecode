@@ -15,7 +15,7 @@ $services = get_field('repeater_services'); // Répéteur pour services (4 max):
     <div class="flex flex-col gap-3">
         <h2 class="h2 text-primary prose"><?php echo $title ?></h2>
         <div class="paragraph flex flex-col gap-7 prose prose-p:m-0 text-primary lg:w-[75%]">
-            <?php echo wp_kses_post($description); ?>
+            <?php echo $description; ?>
         </div>
 
         <?php 

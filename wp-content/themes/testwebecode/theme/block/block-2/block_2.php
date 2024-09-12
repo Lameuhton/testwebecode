@@ -14,7 +14,7 @@ $cards = get_field('repeater_cards'); // Répéteur de cards (6 max): champ "ré
     <div class="flex flex-col gap-3">
         <h2 class="h2 text-primary prose"><?php echo $title ?></h2>
         <div class="paragraph flex flex-col gap-7 prose prose-p:m-0 text-primary">
-            <?php echo wp_kses_post($description); ?>
+            <?php echo $description; ?>
         </div>
 
         <?php 

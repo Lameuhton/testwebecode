@@ -23,7 +23,7 @@
     }
 
     .button {
-        @apply text-white font-text bg-secondary;
+        @apply text-white font-text bg-secondary py-4 px-28 w-fit rounded-tl-2xl rounded-br-2xl;
     }
     
     /* Marges de gauche et droite de la page (ajoutées sur chaque section)*/
