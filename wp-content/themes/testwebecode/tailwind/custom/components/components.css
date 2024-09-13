@@ -109,12 +109,12 @@
 }
 
 .icon {
-    font-size: 24px;
+    font-size: 30px; /* Taille du "+" ou "-" */
     font-weight: bold;
 }
 
 .accordion-item {
-    border-bottom: 2px solid #004B4B; /* Couleur de la bordure (exemple en vert foncé) */
+    border-bottom: 2px solid #004B4B; /* Couleur de la bordure */
 }
 
 .accordion-header:hover {
