@@ -252,7 +252,7 @@ if ( function_exists('acf_register_block_type') ) {
 		acf_register_block_type(array(
             'name'              => 'block_3',
             'title'             => __('Block 3'),
-            'description'       => __("Bloc avec des présentationd de services"),
+            'description'       => __("Bloc avec des présentation de services"),
             'render_template'   => 'block/block-3/block_3.php',
             'category'          => 'formatting',
             'icon'              => 'admin-comments',
@@ -266,13 +266,13 @@ if ( function_exists('acf_register_block_type') ) {
 
 		// Block 4
 		// Titre: champ "texte", nom "title"
-		// Description: champ "Éditeur WYSIWYG", nom "description"
-		// Lien: champ "lien", nom "link"
-		// Répéteur pour services (4 max): champ "répéteur", nom "repeater_services"
+		// Texte: champ "zone de texte", nom "text"
+		// Lien: champ "lien", nom "button"
+		// // Répéteur d'options (5 max): champ "répéteur", nom "options_repeater"
 		// Sous-champs:
 			// - Icone: champ "image", nom "icon"
 			// - Titre: champ "texte", nom "title"
-			// - Description: champ "zone de texte", nom "description"
+			// - Description: champ "Éditeur WYSIWYG", nom "description"
 		
 		acf_register_block_type(array(
             'name'              => 'block_4',
@@ -288,6 +288,32 @@ if ( function_exists('acf_register_block_type') ) {
                 'customClassName' => true,
             ),
         ));
+
+		// Block 5
+		// Titre: champ "texte", nom "title"
+		// Texte: champ "zone de texte", nom "text"
+		// Lien: champ "lien", nom "button"
+		// // Répéteur d'options (5 max): champ "répéteur", nom "options_repeater"
+		// Sous-champs:
+			// - Icone: champ "image", nom "icon"
+			// - Titre: champ "texte", nom "title"
+			// - Description: champ "Éditeur WYSIWYG", nom "description"
+		
+		acf_register_block_type(array(
+            'name'              => 'block_5',
+            'title'             => __('Block 5'),
+            'description'       => __("Bloc avec des grandes cards de présentation et effet parallax au scroll"),
+            'render_template'   => 'block/block-5/block_5.php',
+            'category'          => 'formatting',
+            'icon'              => 'admin-comments',
+            'keywords'          => array('test', 'custom', 'acf', 'block', 'accueil'),
+            'supports'          => array(
+                'align' => true,
+                'anchor' => true,
+                'customClassName' => true,
+            ),
+        ));
+
 
     }
     add_action('acf/init', 'my_acf_init_block_types');

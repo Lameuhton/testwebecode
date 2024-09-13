@@ -3,9 +3,9 @@
 $title = get_field('title'); // Titre: champ "texte", nom "title"
 $text = get_field('text'); // Texte: champ "zone de texte", nom "text"
 $button = get_field('button'); // Lien: champ "lien", nom "button"
-$options_repeater = get_field('options_repeater'); // Répéteur d'options (6 max): champ "répéteur", nom "options_repeater"
+$options_repeater = get_field('options_repeater'); // Répéteur d'options (5 max): champ "répéteur", nom "options_repeater"
     // Sous-champs:
-    // - Icone: champ "image", nom "card_image"
+    // - Icone: champ "image", nom "icon"
     // - Titre: champ "texte", nom "title"
     // - Description: champ "Éditeur WYSIWYG", nom "description"
 ?>
