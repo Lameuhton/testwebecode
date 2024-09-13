@@ -126,3 +126,23 @@
     padding-bottom: 20px;
     margin: 0;
 }
+
+/* ------------------------------------------------------------*/
+/* (block 5) Style for parallax animation */
+/* ------------------------------------------------------------*/
+:root {
+  --card-height: 40vw;
+  --card-margin: 4vw;
+  --card-top-offset: 1em;
+  --numcards: 4;
+  --outline-width: 0px;
+}
+
+#cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(var(--numcards), var(--card-height));
+  gap: var(--card-margin);
+  padding-bottom: calc(var(--numcards) * var(--card-top-offset));
+  margin-bottom: var(--card-margin);
+}

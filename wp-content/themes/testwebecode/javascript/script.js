@@ -55,3 +55,5 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+
+//block 5 parallax animation

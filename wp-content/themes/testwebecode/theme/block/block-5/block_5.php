@@ -27,7 +27,7 @@ $last_card_option = get_field('last_card_option'); // Option couleur de fond der
         <a class="button" href="<?php echo esc_url( $button_url ); ?>" target="<?php echo esc_attr( $button_target ); ?>"><?php echo esc_html( $button_title ); ?></a>
     <?php endif; ?>
 
-    <div class="flex flex-col gap-5">
+    <div id="cards">
         <?php 
         if( $cards_repeater ):
             for( $i = 0; $i < count($cards_repeater); $i++ ):
