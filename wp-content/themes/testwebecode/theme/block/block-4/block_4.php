@@ -10,10 +10,10 @@ $options_repeater = get_field('options_repeater'); // Répéteur d'options (6 ma
     // - Description: champ "Éditeur WYSIWYG", nom "description"
 ?>
 
-<section class="sides-page-margin flex flex-col gap-3">
-    <h2 class="h2 text-primary"><?php echo $title ?></h2>
+<section class="sides-page-margin flex flex-col gap-10">
+    <h2 class="h2 text-primary mb-5"><?php echo $title ?></h2>
 
-    <div class="flex flex-col gap-5 mt-12">
+    <div class="flex flex-col gap-5">
         <?php 
         if( $options_repeater ):
             for( $i = 0; $i < min(5, count($options_repeater)); $i++ ):
@@ -30,8 +30,8 @@ $options_repeater = get_field('options_repeater'); // Répéteur d'options (6 ma
                         <h3 class="h3 mb-2 self-center"><?php echo $option_title ; ?></h3>
                         <span class="ml-auto self-center icon">+</span>
                     </div>
-                    <div class="accordion-content max-h-0 overflow-hidden transition-all duration-300">
-                        <p class="paragraph prose mt-2"><?php echo $option_description; ?></p>              
+                    <div class="accordion-content max-h-0 overflow-hidden transition-all duration-300 paragraph prose">
+                        <?php echo $option_description; ?> 
                     </div>
                 </div>
                 <?php
@@ -40,7 +40,7 @@ $options_repeater = get_field('options_repeater'); // Répéteur d'options (6 ma
         ?>
     </div>
 
-    <p><?php echo $text ?></p>
+    <p class="font-text text-xl"><?php echo $text ?></p>
 
     <?php 
     if( $button ): 
@@ -51,8 +51,4 @@ $options_repeater = get_field('options_repeater'); // Répéteur d'options (6 ma
         <a class="button" href="<?php echo esc_url( $button_url ); ?>" target="<?php echo esc_attr( $button_target ); ?>"><?php echo esc_html( $button_title ); ?></a>
     <?php endif; ?>
 
-    
-    
-
-    
 </section>
