@@ -12,7 +12,7 @@ $last_card_option = get_field('last_card_option'); // Option couleur de fond der
 ?>
 
 <section class="sides-page-margin flex flex-col gap-10">
-    <h2 class="h2 text-primary mb-5 prose"><?php echo $title ?></h2>
+    <h2 class="h2 text-primary prose"><?php echo $title ?></h2>
 
     <div class="paragraph flex flex-col gap-7 prose prose-p:m-0 text-primary">
         <?php echo $description; ?>
@@ -30,20 +30,26 @@ $last_card_option = get_field('last_card_option'); // Option couleur de fond der
     <div class="flex flex-col gap-5">
         <?php 
         if( $cards_repeater ):
-            for( $i = 0; $i < min(5, count($cards_repeater)); $i++ ):
+            for( $i = 0; $i < count($cards_repeater); $i++ ):
                 $card = $cards_repeater[$i];
                 $card_title = $card['title'];
                 $card_subtitle = $card['subtitle'];
                 $card_description = $card['description'];
+                
+                // Déterminer si c'est la dernière carte et si l'option est activée
+                $is_last_card = ($i === count($cards_repeater) - 1 && $last_card_option);
+                $card_bg_class = $is_last_card ? 'bg-primary' : 'bg-white';
+                $text_class = $is_last_card ? 'text-white' : 'text-primary';
                 ?>
-                <div class="border-[3px] border-primary rounded-3xl px-10 py-7 min-h-[550px]">
-                    <div class="flex flex-col gap-3">
-                        <h3 class="h3 mb-2"><?php echo $card_title ; ?></h3>
-                        <p class="font-text"><?php echo $card_subtitle ; ?></p>
-                        <div class="paragraph prose">
+                <div class="border-[3px] border-primary rounded-3xl px-14 pt-14 pb-10 min-h-[550px] flex flex-col justify-between <?php echo $card_bg_class; ?>">
+                    <div class="flex flex-col gap-3 w-[75%]">
+                        <h3 class="h3 mb-2 <?php echo $text_class; ?>"><?php echo $card_title ; ?></h3>
+                        <p class="font-text text-lg <?php echo $text_class; ?>"><?php echo $card_subtitle ; ?></p>
+                        <div class="paragraph prose <?php echo $is_last_card ? 'prose-invert' : ''; ?>">
                             <?php echo $card_description; ?> 
                         </div>
                     </div>
+                    <p class="font-text text-[64px] <?php echo $text_class; ?>">0<?php echo $i+1; ?></p>
                 </div>
                 <?php
             endfor;
