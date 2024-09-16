@@ -59,10 +59,10 @@ module.exports = {
 			}],
 		  },
 		  colors: { 
-			primary: '#1E1E1E',
-			secondary: '#6F6F6F',
+			primary: '#0F3030',
+			secondary: '#FF6B18',
 			gray: '#6F6F6F',
-			accent: '#FF5733',
+			accent: '#FFB700',
 			background: '#F5F5F5',
 			dark: '#1E1E1E',
 		  },

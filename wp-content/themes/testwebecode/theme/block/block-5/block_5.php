@@ -40,16 +40,19 @@ $last_card_option = get_field('last_card_option'); // Option couleur de fond der
                 $is_last_card = ($i === count($cards_repeater) - 1 && $last_card_option);
                 $card_bg_class = $is_last_card ? 'bg-primary' : 'bg-white';
                 $text_class = $is_last_card ? 'text-white' : 'text-primary';
+                $card_id = "card-" . ($i + 1); // Générer un ID unique
                 ?>
-                <div class="border-[3px] border-primary rounded-3xl px-14 pt-14 pb-10 min-h-[550px] flex flex-col justify-between <?php echo $card_bg_class; ?>">
-                    <div class="flex flex-col gap-3 w-[75%]">
-                        <h3 class="h3 mb-2 <?php echo $text_class; ?>"><?php echo $card_title ; ?></h3>
-                        <p class="font-text text-lg <?php echo $text_class; ?>"><?php echo $card_subtitle ; ?></p>
-                        <div class="paragraph prose <?php echo $is_last_card ? 'prose-invert' : ''; ?>">
-                            <?php echo $card_description; ?> 
+                <div id="<?php echo $card_id; ?>" class="card ">
+                    <div class="card-content flex flex-col justify-between border-[3px] border-primary rounded-3xl px-14 py-16 min-h-[550px] <?php echo $card_bg_class; ?>">
+                        <div class="flex flex-col gap-3 w-[75%]">
+                            <h3 class="h3 mb-2 <?php echo $text_class; ?>"><?php echo $card_title ; ?></h3>
+                            <p class="font-text text-lg <?php echo $text_class; ?>"><?php echo $card_subtitle ; ?></p>
+                            <div class="paragraph prose <?php echo $is_last_card ? 'prose-invert' : ''; ?>">
+                                <?php echo $card_description; ?> 
+                            </div>
                         </div>
+                        <p class="font-text text-[64px] <?php echo $text_class; ?>">0<?php echo $i+1; ?></p>
                     </div>
-                    <p class="font-text text-[64px] <?php echo $text_class; ?>">0<?php echo $i+1; ?></p>
                 </div>
                 <?php
             endfor;

@@ -36,7 +36,7 @@ $cards = get_field('repeater_cards'); // Répéteur de cards (6 max): champ "ré
                 $card_title = $card['card_title'];
                 $card_image = $card['card_image'];
                 ?>
-                <div class="card px-8 py-10 rounded-3xl grid grid-rows-2"> <!-- Classe "card" pour l'animation de hover -->
+                <div class="card-hover px-8 py-10 rounded-3xl grid grid-rows-2"> <!-- Classe "card" pour l'animation de hover -->
                     <?php if( $card_image ): ?>
                         <img src="<?php echo esc_url($card_image['url']); ?>" alt="<?php echo esc_attr($card_image['alt']); ?>" class="mb-2 w-auto h-auto self-end">
                     <?php endif; ?>

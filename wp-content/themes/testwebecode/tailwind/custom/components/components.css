@@ -58,14 +58,14 @@
 /* ------------------------------------------------------------*/
 /* (block 2) Style for cards with hover color animation */
 /* ------------------------------------------------------------*/
-.card {
+.card-hover {
   position: relative;
   background-color: white;
   overflow: hidden;
   transition: background-color 0.5s ease;
 }
 
-.card::before {
+.card-hover::before {
   content: '';
   position: absolute;
   top: var(--y, 50%);
@@ -80,14 +80,14 @@
   z-index: 0;
 }
 
-.card:hover::before {
+.card-hover:hover::before {
   opacity: 1;
   transform: translate(-50%, -50%) scale(1);
 }
 
 /* Ensures text and image are above the animated background */
-.card img,
-.card h3 {
+.card-hover img,
+.card-hover h3 {
   position: relative;
   z-index: 2; 
 }
@@ -133,8 +133,7 @@
 :root {
   --card-height: 40vw;
   --card-margin: 4vw;
-  --card-top-offset: 1em;
-  --numcards: 4;
+  --card-top-offset: 3em;
   --outline-width: 0px;
 }
 
@@ -145,4 +144,54 @@
   gap: var(--card-margin);
   padding-bottom: calc(var(--numcards) * var(--card-top-offset));
   margin-bottom: var(--card-margin);
+}
+
+.card {
+  position: sticky;
+  top: 50px;
+
+}
+
+
+/* Animation */
+@supports (animation-timeline: works) {
+
+  @scroll-timeline cards-element-scrolls-in-body {
+    source: selector(body);
+    scroll-offsets:
+      selector(#cards) start 1,
+      selector(#cards) start 0
+    ;
+    start: selector(#cards) start 1;
+    end: selector(#cards) start 0;
+    time-range: 4s;
+  }
+
+  .card {
+    --index0: calc(var(--index) - 1);
+    --reverse-index: calc(var(--numcards) - var(--index0));
+    --reverse-index0: calc(var(--reverse-index) - 1);
+  }
+  
+  .card__content {
+    transform-origin: 50% 0%;
+    will-change: transform;
+
+    --duration: calc(var(--reverse-index0) * 1s);
+    --delay: calc(var(--index0) * 1s);
+
+    animation: var(--duration) linear scale var(--delay) forwards;
+    animation-timeline: cards-element-scrolls-in-body;
+  }
+
+  @keyframes scale {
+    to {
+      transform:
+        scale(calc(
+          1.1
+          -
+          calc(0.1 * var(--reverse-index))
+        ));
+    }
+  }
 }
