@@ -290,14 +290,15 @@ if ( function_exists('acf_register_block_type') ) {
         ));
 
 		// Block 5
-		// Titre: champ "texte", nom "title"
-		// Texte: champ "zone de texte", nom "text"
+		// Titre: champ "Éditeur WYSIWYG", nom "title"
+		// Description: champ "Éditeur WYSIWYG", nom "description"
 		// Lien: champ "lien", nom "button"
-		// // Répéteur d'options (5 max): champ "répéteur", nom "options_repeater"
+		// Répéteur de cards: champ "répéteur", nom "cards_repeater"
 		// Sous-champs:
-			// - Icone: champ "image", nom "icon"
 			// - Titre: champ "texte", nom "title"
+			// - Sous-titre: champ "texte", nom "subtitle"
 			// - Description: champ "Éditeur WYSIWYG", nom "description"
+		// Option couleur de fond dernière card: champ "True/False", nom "last_card_option"
 		
 		acf_register_block_type(array(
             'name'              => 'block_5',
@@ -314,6 +315,22 @@ if ( function_exists('acf_register_block_type') ) {
             ),
         ));
 
+		// Block 6
+		
+		acf_register_block_type(array(
+            'name'              => 'block_6',
+            'title'             => __('Block 6'),
+            'description'       => __("Bloc flexible"),
+            'render_template'   => 'block/block-6/block_6.php',
+            'category'          => 'formatting',
+            'icon'              => 'admin-comments',
+            'keywords'          => array('test', 'custom', 'acf', 'block', 'accueil'),
+            'supports'          => array(
+                'align' => true,
+                'anchor' => true,
+                'customClassName' => true,
+            ),
+        ));
 
     }
     add_action('acf/init', 'my_acf_init_block_types');
