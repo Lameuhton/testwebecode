@@ -1,5 +1,5 @@
 <?php if (have_rows('content_blocks')): ?>
-    <section class="sides-page-margin grid grid-cols-12 relative">
+    <section class="sides-page-margin grid grid-cols-12 gap-x-8 relative">
 
         <?php while (have_rows('content_blocks')): the_row(); ?>
 
@@ -13,29 +13,25 @@
             $button = get_sub_field('button');
             ?>
 
-            <!-- Block: Main Title -->
-            <?php if ($layout == 'main_title'): ?>
-                <div class="col-start-5 col-end-12  text-center py-8 relative z-10">
-                    <h2 class="text-4xl font-bold text-[#00322D]"><?php echo $title; ?></h2>
-                </div>
-
             <!-- Block 1: Text with Image -->
-            <?php elseif ($layout == 'text_with_image'): ?>
-                <div class="col-start-1 col-end-5 p-6 bg-white border shadow-lg rounded-2xl relative z-10  left-[20px]<?php echo ($style == 'style_2') ? 'text-center' : 'text-left'; ?>">
+            <?php if ($layout == 'text_with_image'): ?>
+                <div class="col-start-1 col-end-5 px-10 pb-12 pt-16 bg-white shadow-xl rounded-3xl relative z-10 left-[10px] top-[70px] <?php echo ($style == 'style_2') ? 'text-center' : 'text-left'; ?>">
                     
                     <?php if ($style == 'style_1'): ?>
                         <!-- Style 1: Title aligned left, image top-right -->
                         <div class="flex justify-between items-start">
-                            <p class="text-lg font-semibold text-[#E56027]"><?php echo $title; ?></p>
+                            <p class="font-text text-xl font-bold text-secondary"><?php echo $title; ?></p>
                             <?php if( $image ): ?>
-                                <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" class="w-8 h-8 object-cover">
+                                <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" class="absolute top-[10px] right-10">
                             <?php endif; ?>
                         </div>
-                        <p class="text-sm text-gray-600 mt-2"><?php echo $text; ?></p>
+                        <div class="font-text mt-2 max-w-[75%] prose">
+                            <?php echo $text; ?>
+                        </div>
 
                     <?php elseif ($style == 'style_2'): ?>
                         <!-- Style 2: Title centered, image below, description hidden -->
-                        <p class="text-lg font-semibold text-[#E56027] mb-4"><?php echo $title; ?></p>
+                        <p class="text-lg font-semibold mb-4"><?php echo $title; ?></p>
                         <img src="<?php echo $image; ?>" alt="" class="w-8 h-8 object-cover mx-auto">
                         <!-- Hide description for style 2 -->
 
@@ -47,32 +43,40 @@
                     <?php endif; ?>
                 </div>
 
-
+            <!-- Block: Main Title -->
+            <?php elseif ($layout == 'main_title'): ?>
+                <div class="col-start-5 col-end-12 row-start-1 pt-20 pl-2 text-left relative z-10">
+                    <h2 class="h2 font-bold text-primary"><?php echo $title; ?></h2>
+                </div>
+                
             <!-- Block 2: Centered or Left-aligned Text with Title -->
             <?php elseif ($layout == 'centered_text'): ?>
-                <div class="col-start-4 col-end-12  p-6 rounded-2xl shadow-lg relative z-20 <?php echo ($style == 'style_1') ? 'text-center bg-[#00322D] text-white' : 'text-left bg-white text-gray-900'; ?>">
-                    <p class="text-lg font-semibold mb-4"><?php echo $title; ?></p>
-                    <p class="text-sm"><?php echo $text; ?></p>
+                <div class="col-start-4 col-end-13 flex flex-col px-10 py-20 rounded-3xl shadow-xl relative z-20 top-[-80px] text-white bg-primary <?php echo ($style == 'style_1') ? 'text-center items-center' : 'text-left items-start'; ?>">
+                    <p class="font-text text-3xl font-semibold mb-8"><?php echo $title; ?></p>
+                    <div class="font-text text-lg w-[75%] text-white prose">
+                        <?php echo $text; ?>
+                    </div>
                 </div>
 
             <!-- Block 3: Text Block (always left-aligned) -->
             <?php elseif ($layout == 'text_block'): ?>
-                <div class="col-start-1 col-end-6 p-6 bg-[#00796B] text-white rounded-2xl shadow-lg relative z-10 top-[-50px]">
-                    <p class="text-sm"><?php echo $text; ?></p>
+                <div class="font-text text-xl col-start-1 col-end-7 px-6 pb-10 pt-14 bg-gradient-to-r from-[#058D8F] to-[#036855] text-white rounded-3xl relative leadz-10 top-[-98px] prose prose-strong:text-white">
+                    <?php echo $text; ?>
                 </div>
 
             <!-- Block 4: Centered Text with Button -->
             <?php elseif ($layout == 'centered_text_with_button'): ?>
-                <div class="col-start-7 col-end-11 p-6 text-center rounded-2xl shadow-lg bg-white border border-gray-200 relative z-10 top-[30px]">
-                    <p class="text-lg font-bold mb-4"><?php echo $title; ?></p>
-                    <p class="mb-6 text-gray-700"><?php echo $text; ?></p>
+                <div class="col-start-8 col-end-12 px-6 pb-6 pt-8 text-center rounded-3xl bg-white border border-gray-200 relative z-10 bottom-[65px] h-[70%] flex flex-col justify-center items-center">
+                    <div class="font-text text-2xl mb-4 prose w-[90%]">
+                        <?php echo $title; ?>
+                    </div>
                     <?php
                     if( $button ): 
                     $button_url = $button['url'];
                     $button_title = $button['title'];
                     $button_target = $button['target'] ? $button['target'] : '_self';
                     ?>
-                    <a class="text-white font-text bg-gradient-to-r from-accent to-secondary rounded-xl inline-block" href="<?php echo esc_url( $button_url ); ?>" target="<?php echo esc_attr( $button_target ); ?>"><?php echo esc_html( $button_title ); ?></a>
+                    <a class="text-white font-text bg-gradient-to-r from-accent to-secondary rounded-xl inline-block px-12 py-3 " href="<?php echo esc_url( $button_url ); ?>" target="<?php echo esc_attr( $button_target ); ?>"><?php echo esc_html( $button_title ); ?></a>
                     <?php endif; ?>
                 </div>
 
