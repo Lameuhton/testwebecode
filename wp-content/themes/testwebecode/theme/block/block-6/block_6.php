@@ -59,7 +59,7 @@
                 
             <!-- Block 2: Centered or Left-aligned Text with Title -->
             <?php elseif ($layout == 'centered_text'): ?>
-                <div class="col-start-4 col-end-13 flex flex-col px-10 py-20 rounded-3xl shadow-xl md:relative z-20 md:top-[-80px] text-white bg-primary <?php echo ($style == 'style_1') ? 'text-center items-center' : 'text-left items-start'; ?>">
+                <div class="col-start-4 col-end-13 flex flex-col px-10 md:py-20 py-10 rounded-3xl shadow-xl md:relative z-20 md:top-[-80px] text-white bg-primary <?php echo ($style == 'style_1') ? 'text-center items-center' : 'text-left items-start'; ?>">
                     <p class="font-text text-3xl font-semibold mb-8"><?php echo $title; ?></p>
                     <div class="font-text text-lg w-[75%] text-white prose">
                         <?php echo $text; ?>
@@ -68,7 +68,7 @@
 
             <!-- Block 3: Text Block (always left-aligned) -->
             <?php elseif ($layout == 'text_block'): ?>
-                <div class="font-text text-xl col-start-1 col-end-7 px-6 pb-10 pt-14 bg-gradient-to-r from-[#058D8F] to-[#036855] text-white rounded-3xl md:relative md:top-[-98px] prose prose-strong:text-white">
+                <div class="font-text text-xl col-start-1 col-end-7 px-10 md:px-6 pb-10 pt-14 bg-gradient-to-r from-[#058D8F] to-[#036855] text-white rounded-3xl md:relative md:top-[-98px] prose prose-strong:text-white">
                     <?php echo $text; ?>
                 </div>
 
