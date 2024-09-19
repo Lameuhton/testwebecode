@@ -17,7 +17,7 @@
             <?php if ($layout == 'text_with_image'): ?>
                       
                 <?php if ($style == 'style_1'): ?>
-                    <div class="col-start-1 md:col-end-6 lg:col-end-5 px-10 md:pb-12 md:pt-16 py-10 bg-white shadow-xl rounded-3xl relative z-10 md:left-[10px] md:top-[70px] <?php echo ($style == 'style_2') ? 'text-center' : 'text-left'; ?>">
+                    <div class="col-start-1 md:col-end-6 lg:col-end-5 px-10 md:pb-12 md:pt-16 py-10 bg-white shadow-xl rounded-3xl relative z-10 md:left-[10px] md:top-[70px] text-left <?php echo ($style == 'style_2') ? 'md:text-center' : 'md:text-left'; ?>">
                         <!-- Style 1: Title aligned left, image top-right -->
                         <div class="flex md:justify-between mb-3 md:mb-0 items-end md:items-start md:max-w-[75%] lg:max-w-full">
                             <?php if( $image ): ?>
@@ -59,9 +59,9 @@
                 
             <!-- Block 2: Centered or Left-aligned Text with Title -->
             <?php elseif ($layout == 'centered_text'): ?>
-                <div class="col-start-4 col-end-13 flex flex-col px-10 md:py-20 py-10 rounded-3xl shadow-xl md:relative z-20 md:top-[-80px] text-white bg-primary <?php echo ($style == 'style_1') ? 'md:text-center md:items-center' : 'md:text-left md:items-start'; ?>">
+                <div class="col-start-4 col-end-13 flex flex-col px-10 md:py-20 py-10 rounded-3xl shadow-xl md:relative z-20 md:top-[-80px] text-white bg-primary <?php echo ($style == 'style_1') ? 'text-center items-center' : 'text-left items-start'; ?>">
                     <p class="font-text text-3xl font-semibold mb-8"><?php echo $title; ?></p>
-                    <div class="font-text text-lg md:w-[75%] text-white prose">
+                    <div class="font-text text-lg w-[75%] text-white prose">
                         <?php echo $text; ?>
                     </div>
                 </div>

@@ -320,8 +320,25 @@ if ( function_exists('acf_register_block_type') ) {
 		acf_register_block_type(array(
             'name'              => 'block_6',
             'title'             => __('Block 6'),
-            'description'       => __("Bloc flexible"),
+            'description'       => __("Bloc flexible (4 blocs)"),
             'render_template'   => 'block/block-6/block_6.php',
+            'category'          => 'formatting',
+            'icon'              => 'admin-comments',
+            'keywords'          => array('test', 'custom', 'acf', 'block', 'accueil'),
+            'supports'          => array(
+                'align' => true,
+                'anchor' => true,
+                'customClassName' => true,
+            ),
+        ));
+
+		// Block 7
+		
+		acf_register_block_type(array(
+            'name'              => 'block_7',
+            'title'             => __('Block 7'),
+            'description'       => __("Bloc flexible (3 blocs)"),
+            'render_template'   => 'block/block-7/block_7.php',
             'category'          => 'formatting',
             'icon'              => 'admin-comments',
             'keywords'          => array('test', 'custom', 'acf', 'block', 'accueil'),
