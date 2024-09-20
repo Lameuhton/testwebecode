@@ -29,7 +29,7 @@
                         <!-- Style 1: Title aligned left, image top-right -->
                         <div class="flex md:justify-between mb-3 md:mb-0 items-end md:items-start md:max-w-[75%] lg:max-w-full">
                             <?php if( $image ): ?>
-                                <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" class="max-w-[20%] md:max-w-auto md:absolute md:top-[10px] md:right-10 mr-3 md:mr-0">
+                                <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" class="max-w-[20%] md:max-w-auto md:absolute md:top-[10px] md:right-10 xlarge:right-28 mr-3 md:mr-0">
                             <?php endif; ?>
                             <p class="font-text text-xl font-bold text-secondary"><?php echo $title; ?></p>
                         </div>
@@ -82,7 +82,7 @@
 
             <!-- Block 4: Centered Text with Button -->
             <?php elseif ($layout == 'centered_text_with_button'): ?>
-                <div class="order-6 md:order-none col-start-8 col-end-12 px-6 pb-6 pt-8 text-center rounded-3xl bg-white border border-gray-200 md:relative z-10 md:bottom-[65px] md:h-[70%] flex flex-col justify-center items-center">
+                <div class="order-6 md:order-none col-start-8 col-end-12 px-6 pb-6 pt-8 text-center rounded-3xl border border-gray-200 md:relative z-10 md:bottom-[65px] md:h-[70%] flex flex-col justify-center items-center">
                     <div class="font-text text-2xl mb-4 prose w-[90%]">
                         <?php echo $title; ?>
                     </div>
