@@ -131,28 +131,31 @@
 /* (block 5) Style for parallax animation */
 /* ------------------------------------------------------------*/
 :root {
-  --card-height: 40vw;
-  --card-margin: 4vw;
-  --card-top-offset: 3em;
-  --outline-width: 0px;
+  --cardHeight: 84vh;
+  --cardTopPadding: 1.5em;
+  --cardMargin: 4vw;
 }
 
 #cards {
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: repeat(var(--numcards), var(--card-height));
-  gap: var(--card-margin);
-  padding-bottom: calc(var(--numcards) * var(--card-top-offset));
-  margin-bottom: var(--card-margin);
+  grid-template-rows: repeat(var(--cards), var(--cardHeight));
+  gap: var(--cardMargin);
+  padding-bottom: calc(var(--cards) * var(--cardTopPadding));
+  margin-bottom: var(--cardMargin);
 }
 
 .card {
   position: sticky;
-  top: 50px;
-
+  top: 5vh;
+  padding-top: cal(var(--index) * var(--cardTopPadding)); /* à enlever */
 }
 
-/* Animation */
+.card-body {
+  height: var(--cardHeight);
+}
+
+/* Animation
 @supports (animation-timeline: works) {
 
   @scroll-timeline cards-element-scrolls-in-body {
@@ -193,4 +196,4 @@
         ));
     }
   }
-}
+} */

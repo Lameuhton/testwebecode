@@ -65,7 +65,7 @@ document.addEventListener("DOMContentLoaded", function() {
     
     // Définir la variable globale --numcards égale au nombre de cartes
     const numCards = cards.length;
-    root.style.setProperty('--numcards', numCards);
+    root.style.setProperty('--cards', numCards);
 
     // Boucle sur toutes les cartes qui ont un ID comme 'card-1', 'card-2', etc.
     document.querySelectorAll('#cards > div[id^="card-"]').forEach((card) => {

@@ -27,6 +27,7 @@ $last_card_option = get_field('last_card_option'); // Option couleur de fond der
         <a class="button" href="<?php echo esc_url( $button_url ); ?>" target="<?php echo esc_attr( $button_target ); ?>"><?php echo esc_html( $button_title ); ?></a>
     <?php endif; ?>
 
+
     <div id="cards">
         <?php 
         if( $cards_repeater ):
@@ -42,8 +43,8 @@ $last_card_option = get_field('last_card_option'); // Option couleur de fond der
                 $text_class = $is_last_card ? 'text-white' : 'text-primary';
                 $card_id = "card-" . ($i + 1); // Générer un ID unique
                 ?>
-                <div id="<?php echo $card_id; ?>" class="card ">
-                    <div class="card-content flex flex-col justify-between border-[3px] border-primary rounded-3xl px-14 py-16 min-h-[550px] <?php echo $card_bg_class; ?>">
+                <div id="<?php echo $card_id; ?>" class="card">
+                    <div class="card-body flex flex-col justify-between border-[3px] border-primary rounded-3xl px-14 py-16 <?php echo $card_bg_class; ?>">
                         <div class="flex flex-col gap-3 w-[75%]">
                             <h3 class="h3 mb-2 <?php echo $text_class; ?>"><?php echo $card_title ; ?></h3>
                             <p class="font-text text-lg <?php echo $text_class; ?>"><?php echo $card_subtitle ; ?></p>
@@ -58,6 +59,8 @@ $last_card_option = get_field('last_card_option'); // Option couleur de fond der
             endfor;
         endif;
         ?>
-    </div>
+    </div> 
+
+    
 
 </section>
