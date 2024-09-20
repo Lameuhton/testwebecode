@@ -20,7 +20,7 @@
 
             <!-- Block: Rules Title -->
             <?php if ($layout == 'rules_title'): ?>
-                <div class="order-1 md:order-none md:col-start-5 col-end-12 row-start-1 lg:pl-2 text-left relative md:top-[-10px]">
+                <div class="md:col-start-1 col-end-8 row-start-1 lg:pl-2 text-left relative md:top-[-10px]">
                     <h2 class="font-text text-[20px] md:text-[40px] text-primary"><?php echo $rules; ?></h2>
                 </div>
 
@@ -28,7 +28,7 @@
             <?php elseif ($layout == 'text_with_image'): ?>
                       
                 <?php if ($style_1 == 'style_1'): ?>
-                    <div class="order-3 md:order-none col-start-1 md:col-end-5 lg:col-end-5 px-10 md:pb-12 md:pt-16 py-10 bg-white shadow-xl rounded-3xl relative z-10 md:left-[10px] md:top-[40px] <?php echo ($style_1 == 'style_2') ? 'text-center' : 'text-left'; ?>">
+                    <div class="col-start-8 col-end-13 px-10 md:pb-12 md:pt-16 py-10 bg-white shadow-xl rounded-3xl relative z-10 md:left-[10px] md:top-[40px] <?php echo ($style_1 == 'style_2') ? 'text-center' : 'text-left'; ?>">
                         <!-- Style 1: Title aligned left, image top-right -->
                         <div class="flex md:justify-between mb-3 md:mb-0 items-end md:items-start md:max-w-[75%] lg:max-w-full">
                             <?php if( $image ): ?>
@@ -42,7 +42,7 @@
                     </div>
 
                 <?php elseif ($style_1 == 'style_2'): ?>
-                    <div class="order-3 md:order-none col-start-1 md:col-end-5 px-10 md:pb-16 md:pt-16 py-10 bg-white shadow-xl rounded-3xl relative z-10 md:left-[10px] md:top-[50px] <?php echo ($style_1 == 'style_2') ? 'text-center' : 'text-left'; ?>">
+                    <div class="col-start-8 col-end-13 px-10 md:pb-16 md:pt-16 py-10 bg-white  rounded-3xl relative z-10 md:left-[10px] md:top-[50px] <?php echo ($style_1 == 'style_2') ? 'text-center' : 'text-left'; ?>">
                         <!-- Style 2: Title centered, image below, description hidden -->
                         <p class="font-text text-xl font-bold text-secondary"><?php echo $title; ?></p>
                         <!-- Hide description for style 2 -->
@@ -52,30 +52,38 @@
 
             <!-- Block: Main Title -->
             <?php elseif ($layout == 'main_title'): ?>
-                <div class="block order-2 md:order-none md:col-start-5 col-end-12 row-start-1 lg:pl-2 text-left md:relative z-10 md:top-10 mb-5 md:mb-0">
+                <div class="md:col-start-1 col-end-8 row-start-1 lg:pl-2 text-left md:relative z-10 md:top-10 mb-5 md:mb-0">
                     <h2 class="h2 font-bold text-primary"><?php echo $title; ?></h2>
                 </div>
                 
             <!-- Block 2: Dark block with numbers  -->
             <?php elseif ($layout == 'dark_block_with_numbers'): ?>
-                <div class="order-4 md:order-none col-start-4 col-end-13 flex flex-col px-10 md:py-20 py-10 rounded-3xl shadow-xl md:relative z-20 md:top-[-80px] text-white bg-primary <?php echo ($style_2 == 'style_1') ? 'md:text-center md:items-center' : 'md:text-left md:items-start'; ?>">
-                    <div class="font-text text-3xl font-semibold mb-8">
+                <div class="col-start-1 col-end-9 flex flex-col gap-2 px-8 py-10 rounded-3xl shadow-xl md:relative z-20 md:top-[40px] text-white bg-primary <?php echo ($style_2 == 'style_1') ? 'md:text-center md:items-center' : 'md:text-left md:items-start'; ?>">
+                    <div class="font-text text-3xl mb-8">
                         <?php echo $title; ?>
                     </div>
-                    <div class="font-text text-lg text-white prose leading-6">
-                        <?php echo $text; ?>
+                    <div class="font-text grid grid-cols-3 w-full text-center">
+                        <div class="font-text text-[52px] text-white prose leading-9 prose-strong:text-white">
+                            <?php echo $number_1; ?>
+                        </div>
+                        <div class="font-text text-[52px] text-white prose leading-9 prose-strong:text-white">
+                            <?php echo $number_2; ?>
+                        </div>
+                        <div class="font-text text-[52px] text-white prose leading-9 prose-strong:text-white">
+                            <?php echo $number_3; ?>
+                        </div>
                     </div>
                 </div>
 
             <!-- Block 2: Dark block without numbers -->
             <?php elseif ($layout == 'dark_block_without_numbers'): ?>
-                 <div class="order-4 md:order-none font-text text-xl col-start-1 col-end-7 px-10 md:px-6 pb-10 pt-14 bg-gradient-to-r from-[#058D8F] to-[#036855] text-white rounded-3xl md:relative md:top-[-98px] prose prose-strong:text-white">
+                 <div class="col-start-1 col-end-9 flex flex-col px-10 md:py-20 py-10 rounded-3xl shadow-xl md:relative z-20 md:top-[-80px] text-white bg-primary prose">
                     <?php echo $text; ?>
                 </div>
 
             <!-- Block 4: Centered Text with Button -->
             <?php elseif ($layout == 'centered_text_with_button'): ?>
-                <div class="order-5 md:order-none col-start-8 col-end-12 px-6 pb-6 pt-8 text-center rounded-3xl bg-white border border-gray-200 md:relative z-10 md:bottom-[65px] md:h-[70%] flex flex-col justify-center items-center">
+                <div class="col-start-6 col-end-11 px-6 pb-10 pt-20 text-center rounded-3xl bg-white shadow-xl md:relative z-10 md:bottom-[35px] flex flex-col justify-center items-center">
                     <div class="font-text text-2xl mb-4 prose w-[90%]">
                         <?php echo $title; ?>
                     </div>
