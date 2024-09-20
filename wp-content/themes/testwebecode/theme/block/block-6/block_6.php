@@ -1,3 +1,34 @@
+<!--
+
+CHAMPS ACF:
+- Champ type "Contenu flexible", libellé "Blocs de contenu", nom "content_blocks"
+    - Disposition "Titre règles", nom "rules_title"
+        - Champ type "Texte", libellé "Titre règles", nom "rules"
+    - Disposition "Titre principal", nom "main_title"
+        - Champ type "Texte", libellé "Titre", nom "title"
+    - Disposition "Texte avec image", nom "text_with_image"
+        - Champ type "Texte", libellé "Titre", nom "title"
+        - Champ type "Image", libellé "Image", nom "image"
+        - Champ type "Editeur WYSIWYG", libellé "Texte", nom "text"
+        - Champ type "Liste déroulante", libellé "Variation du bloc", nom "block_style_1"
+            Choix:
+            style_1 : Titre + texte + image
+            style_2 : Titre + image
+            style_3 : Image
+    - Disposition "Texte centré", nom "centered_text"
+        - Champ type "Texte", libellé "Titre", nom "title"
+        - Champ type "Editeur WYSIWYG", libellé "Texte", nom "text"
+        - Champ type "Liste déroulante", libellé "Variation du bloc", nom "block_style_2"
+            Choix:
+            style_1 : Texte centré
+            style_2 : Texte aligné à gauche       
+    - Disposition "Texte block", nom "text_block"
+        - Champ type "Editeur WYSIWYG", libellé "Texte", nom "text"
+    - Disposition "Texte centré avec bouton", nom "centered_text_with_button"
+        - Champ type "Editeur WYSIWYG", libellé "Titre", nom "title"
+        - Champ type "Lien", libellé "Bouton", nom "button"
+
+-->
 <?php if (have_rows('content_blocks')): ?>
     <section class="sides-page-margin flex flex-col md:grid md:grid-cols-12 gap-y-5 md:gap-y-0 md:gap-x-8 md:relative">
 
