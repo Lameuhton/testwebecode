@@ -56,7 +56,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-//block 5 parallax animation
+// block 5 parallax animation
 
 //Définir la variable --index pour chaque Card
 document.addEventListener("DOMContentLoaded", function() {
