@@ -3,7 +3,7 @@
 CHAMPS ACF:
 - Champ type "Contenu flexible", libellé "Blocs de contenu", nom "content_blocks"
     - Disposition "Titre règles", nom "rules_title"
-        - Champ type "Texte", libellé "Titre règles", nom "rules"
+        - Champ type "Texte", libellé "Titre", nom "rules"
     - Disposition "Titre principal", nom "main_title"
         - Champ type "Texte", libellé "Titre", nom "title"
     - Disposition "Texte avec image", nom "text_with_image"
@@ -13,17 +13,14 @@ CHAMPS ACF:
         - Champ type "Liste déroulante", libellé "Variation du bloc", nom "block_style_1"
             Choix:
             style_1 : Titre + texte + image
-            style_2 : Titre + image
-            style_3 : Image
-    - Disposition "Texte centré", nom "centered_text"
-        - Champ type "Texte", libellé "Titre", nom "title"
-        - Champ type "Editeur WYSIWYG", libellé "Texte", nom "text"
-        - Champ type "Liste déroulante", libellé "Variation du bloc", nom "block_style_2"
-            Choix:
-            style_1 : Texte centré
-            style_2 : Texte aligné à gauche       
-    - Disposition "Texte block", nom "text_block"
-        - Champ type "Editeur WYSIWYG", libellé "Texte", nom "text"
+            style_2 : Titre
+    - Disposition "Bloc foncé avec chiffres", nom "dark_block_with_numbers"
+        - Champ type "Editeur WYSIWYG", libellé "Titre", nom "title"
+        - Champ type "Editeur WYSIWYG", libellé "Chiffre 1", nom "number_1"
+        - Champ type "Editeur WYSIWYG", libellé "Chiffre 2", nom "number_2"
+        - Champ type "Editeur WYSIWYG", libellé "Chiffre 3", nom "number_3"
+    - Disposition "Bloc foncé sans chiffres", nom "dark_block_without_numbers"
+        - Champ type "Editeur WYSIWYG", libellé "Titre", nom "title" 
     - Disposition "Texte centré avec bouton", nom "centered_text_with_button"
         - Champ type "Editeur WYSIWYG", libellé "Titre", nom "title"
         - Champ type "Lien", libellé "Bouton", nom "button"
