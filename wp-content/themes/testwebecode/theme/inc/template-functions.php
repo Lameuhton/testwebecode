@@ -204,3 +204,17 @@ function testwebecode_html5_comment( $comment, $args, $depth ) {
 		</article><!-- .comment-body -->
 	<?php
 }
+
+function get_api_value() {
+    // Effectuer l'appel API
+    $response = wp_remote_get('https://tree-nation.com/api/forests/webecode/tree_counter'); // Remplace cette URL par ton API
+    if ( is_array($response) && !is_wp_error($response) ) {
+        $body = wp_remote_retrieve_body($response);
+        $data = json_decode($body, true); // Convertir la réponse JSON en array associatif
+
+        // Retourner la valeur désirée de l'API
+        return isset($data['count']) ? $data['count'] : 'Valeur non trouvée'; // Remplace 'value' par la clé de ta réponse
+    } else {
+        return 'Erreur lors de la récupération des données'; // En cas d'erreur avec l'API
+    }
+}

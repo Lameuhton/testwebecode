@@ -74,7 +74,9 @@ CHAMPS ACF:
                         <!-- Style 2: Title centered, image below, description hidden -->
                         <p class="font-text text-2xl font-bold mb-8"><?php echo $title; ?></p>
                         <?php if( $image ): ?>
-                            <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" class="object-cover mx-auto">
+                            <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" class="mx-auto">
+                            <p class="font-text text-xl font-semibold"><?php echo get_api_value() ?></p>
+                            <p class="font-text">Arbres plantés</p>
                         <?php endif; ?>
                         <!-- Hide description for style 2 -->
                     </div>
