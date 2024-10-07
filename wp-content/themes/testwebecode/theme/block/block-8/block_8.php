@@ -10,8 +10,8 @@ CHAMPS ACF:
         - Champ type "Zone de texte", libellé "Description", nom "description"
     - Disposition "Texte avec bouton", nom "block_text_with_button"
         - Champ type "Editeur WYSIWYG", libellé "Description", nom "description"
-        - Champ type "Lien", libellé "Bouton", nom "button"
-    - Disposition "Bloc comparaison chargement page", nom "block_comparison_loading_page"
+        - Champ type "lien", libellé "Bouton", nom "button"
+    - Disposition "Bloc comparaison chargement page", nom "page_loading_comparison_block"
         - Champ type "Texte", libellé "Titre", nom "title"
         - Champ type "Texte", libellé "Sous-titre 1", nom "subtitle_1"
         - Champ type "Texte", libellé "Sous-titre 2", nom "subtitle_2"
@@ -53,7 +53,7 @@ CHAMPS ACF:
                 </div>
 
             <!-- Block: text with button -->
-            <?php elseif ($layout == 'bloc_text_with_button'): ?>
+            <?php elseif ($layout == 'block_text_with_button'): ?>
                 <div class="md:col-span-6 self-center rounded-3xl border border-primary px-7 md:px-10 pb-8 pt-11">
                     <div class="font-text text-[20px] mb-6 prose leading-6">
                         <?php echo $description; ?>
