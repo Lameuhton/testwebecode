@@ -1,4 +1,5 @@
 <!--
+Bloc flexible avec plusieurs cards qui comparent site web normal et site web éco-responsable
 
 CHAMPS ACF:
 - Champ type "Contenu flexible", libellé "Blocs de contenu", nom "content_blocks"

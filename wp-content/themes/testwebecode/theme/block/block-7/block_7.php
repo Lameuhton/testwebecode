@@ -1,4 +1,5 @@
 <!--
+Bloc flexible qui ressemble au block 6 avec 3 cards
 
 CHAMPS ACF:
 - Champ type "Contenu flexible", libellé "Blocs de contenu", nom "content_blocks"

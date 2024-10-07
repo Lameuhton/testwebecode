@@ -1,4 +1,5 @@
 <!--
+Bloc flexible avec les 4 cards (et le compteur d'arbre)
 
 CHAMPS ACF:
 - Champ type "Contenu flexible", libellé "Blocs de contenu", nom "content_blocks"
