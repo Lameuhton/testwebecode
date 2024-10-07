@@ -316,6 +316,8 @@ if ( function_exists('acf_register_block_type') ) {
         ));
 
 		// Block 6
+		// Détail des champs dans le fichier block-6.php
+		// Bloc flexible avec les 4 cards (et le compteur d'arbre)
 		
 		acf_register_block_type(array(
             'name'              => 'block_6',
@@ -333,6 +335,8 @@ if ( function_exists('acf_register_block_type') ) {
         ));
 
 		// Block 7
+		// Détail des champs dans le fichier block-7.php
+		// Bloc flexible qui ressemble au block 6 avec 3 cards 
 		
 		acf_register_block_type(array(
             'name'              => 'block_7',
@@ -348,6 +352,10 @@ if ( function_exists('acf_register_block_type') ) {
                 'customClassName' => true,
             ),
         ));
+
+		// Block 8
+		// Détail des champs dans le fichier block-8.php
+		// Bloc flexible avec plusieurs cards qui comparent site web normal et site web éco-responsable
 
 		acf_register_block_type(array(
             'name'              => 'block_8',
