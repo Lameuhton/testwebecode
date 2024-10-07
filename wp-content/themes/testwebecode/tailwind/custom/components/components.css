@@ -198,7 +198,9 @@ button {
     color: #0F3030; /* Texte vert sur bouton inactif */
 }
 
-
+/* ------------------------------------------------------------*/
+/* (block 8) Style for circle values animation */
+/* ------------------------------------------------------------*/
 
 .comparison-grid {
     display: grid;
