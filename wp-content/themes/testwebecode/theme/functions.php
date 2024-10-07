@@ -349,6 +349,21 @@ if ( function_exists('acf_register_block_type') ) {
             ),
         ));
 
+		acf_register_block_type(array(
+            'name'              => 'block_8',
+            'title'             => __('Block 8'),
+            'description'       => __("Bloc avec plusieurs cards dont les infos changent avec animation"),
+            'render_template'   => 'block/block-8/block_8.php',
+            'category'          => 'formatting',
+            'icon'              => 'admin-comments',
+            'keywords'          => array('test', 'custom', 'acf', 'block', 'accueil'),
+            'supports'          => array(
+                'align' => true,
+                'anchor' => true,
+                'customClassName' => true,
+            ),
+        ));
+
     }
     add_action('acf/init', 'my_acf_init_block_types');
 
