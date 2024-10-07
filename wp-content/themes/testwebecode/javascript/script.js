@@ -79,7 +79,6 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 
-
 document.addEventListener('DOMContentLoaded', function () {
 	const btn1 = document.getElementById('btn1');
 	const btn2 = document.getElementById('btn2');
@@ -98,6 +97,15 @@ document.addEventListener('DOMContentLoaded', function () {
 		const circumference = 2 * Math.PI * radius;
 		const offset = circumference - (value / 100) * circumference;
 		circle.style.strokeDashoffset = offset;
+
+		// Changement de couleur en fonction du pourcentage
+		if (value > 75) {
+			circle.style.stroke = '#FF6B18'; // Rouge pour plus de 75%
+		} else if (value > 50) {
+			circle.style.stroke = '#FFB700'; // Orange pour plus de 50%
+		} else {
+			circle.style.stroke = '#058D8F'; // Couleur par défaut
+		}
 	}
 
 	function updateValues(energy, co2, weight) {
@@ -134,4 +142,3 @@ document.addEventListener('DOMContentLoaded', function () {
 		updateValues(30, 45, 50); // Chiffres à ajuster selon ton contexte
 	});
 });
-
