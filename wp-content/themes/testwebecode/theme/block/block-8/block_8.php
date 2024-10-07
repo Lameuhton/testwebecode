@@ -19,7 +19,7 @@ CHAMPS ACF:
         - Champ type "Texte", libellé "Info 2", nom "info_2"
 -->
 <?php if (have_rows('content_blocks')): ?>
-    <section class="sides-page-margin flex flex-col md:grid md:grid-cols-12 gap-y-5 md:gap-y-0 md:gap-x-4 md:relative font-text">
+    <section class="sides-page-margin flex flex-col md:grid md:grid-cols-12 gap-y-5 md:gap-y-0 md:gap-x-4 md:relative font-text mb-16game">
 
         <?php while (have_rows('content_blocks')): the_row(); ?>
 
@@ -40,17 +40,65 @@ CHAMPS ACF:
 
             <!-- Block: Comparison site -->
             <?php if ($layout == 'block_comparison_site'): ?>
-                <div class="md:col-span-12 row-start-1 flex justify-between rounded-3xl text-white bg-primary">
-                    <div class="flex flex-col gap-6">
-                       <div class="bg-white flex p-2 rounded-full font-semibold">
-                            <p class="bg-gradient-to-r from-[#058D8F] to-[#036855] text-white rounded-3xl p-2 "><?php echo $option_1; ?></p>
-                            <p class="p2 text-primary"><?php echo $option_2; ?></p>
+                <div class="md:col-span-12 row-start-1 flex justify-between rounded-3xl text-white bg-primary pl-8 pr-16 pt-11 pb-24 md:relative top-[35px] z-10">
+                    <div class="flex flex-col justify-between items-start gap-6">
+                        <!-- Toggle buttons -->
+                        <div id="toggle" class="relative w-[425px] bg-white rounded-full flex items-center justify-between py-2">
+                            <div id="slider" class="absolute h-full w-[50%] bg-gradient-to-r from-[#058D8F] to-[#036855] rounded-full transition-all duration-300 "></div>
+                            <button id="btn1" class="relative z-10 w-1/2 text-center text-white font-bold active"><?php echo $option_1; ?></button>
+                            <button id="btn2" class="relative z-10 w-1/2 text-center text-primary font-bold"><?php echo $option_2; ?></button>
                         </div>
-                        <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" class="rounded-3xl" />
+
+                        <div class="comparison-grid grid grid-cols-3 gap-8">
+                            <!-- Comparaison 1: Consommation d'énergie -->
+                            <div class="comparison-item flex flex-col items-center">
+                                <div class="circular-progress">
+                                    <svg>
+                                        <circle cx="50" cy="50" r="45"></circle>
+                                        <circle cx="50" cy="50" r="45" id="energy-circle"></circle>
+                                    </svg>
+                                    <div class="number">
+                                        <h2 id="energy-value">2.5 kWh</h2>
+                                    </div>
+                                </div>
+                                <p class="mt-4 font-semibold">Énergie consommée</p>
+                            </div>
+
+                            <!-- Comparaison 2: Émissions de CO₂ -->
+                            <div class="comparison-item flex flex-col items-center">
+                                <div class="circular-progress">
+                                    <svg>
+                                        <circle cx="50" cy="50" r="45"></circle>
+                                        <circle cx="50" cy="50" r="45" id="co2-circle"></circle>
+                                    </svg>
+                                    <div class="number">
+                                        <h2 id="co2-value">1.76 g CO₂</h2>
+                                    </div>
+                                </div>
+                                <p class="mt-4 font-semibold">Émissions de CO₂</p>
+                            </div>
+
+                            <!-- Comparaison 3: Poids de la page -->
+                            <div class="comparison-item  flex flex-col items-center">
+                                <div class="circular-progress">
+                                    <svg>
+                                        <circle cx="50" cy="50" r="45"></circle>
+                                        <circle cx="50" cy="50" r="45" id="weight-circle"></circle>
+                                    </svg>
+                                    <div class="number">
+                                        <h2 id="weight-value">3 Mo</h2>
+                                    </div>
+                                </div>
+                                <p class="mt-4 font-semibold">Poids de la page</p>
+                            </div>
+                        </div>
+
                     </div>
-                    
-                    <p class="text-white px-5 py-8 border border-white rounded-3xl w-[20%]"><?php echo $description; ?></p>
+
+                    <!-- Description block on the right -->
+                    <p class="text-white px-10 py-12 border border-white rounded-3xl w-[40%] text-[20px]"><?php echo $description; ?></p>
                 </div>
+
 
             <!-- Block: text with button -->
             <?php elseif ($layout == 'block_text_with_button'): ?>
@@ -70,21 +118,21 @@ CHAMPS ACF:
                 
             <!-- Block: page loading comparison -->
             <?php elseif ($layout == 'page_loading_comparison_block'): ?>
-                <div class="md:col-span-5 bg-white rounded-3xl shadow-xl md:pt-20 md:pb-9 pl-10 text-primary">
-                    <p class="text-[24px] font-bold mb-8 "><?php echo $title; ?></p>
-                    <div class="text-[18px]">
-                        <p class="mb-1"><?php echo $subtitle_1; ?></p>
-                        <div class="w-[50%] h-6 bg-white border-2 border-[#036855] rounded-full overflow-hidden relative">
+                <div class="md:col-span-5 bg-white rounded-3xl shadow-xl md:pt-20 md:pb-7 pl-9 pr-3 text-primary z-20">
+                    <p class="text-[24px] font-bold mb-4"><?php echo $title; ?></p>
+                    <div class="">
+                        <p class="mb-1 text-[18px]"><?php echo $subtitle_1; ?></p>
+                        <div class="w-[50%] h-6 mb-1 bg-white border border-[#036855] rounded-full overflow-hidden relative">
                             <div class="h-full bg-primary w-[30%] rounded-full"></div>
                         </div>
-                        <p class="mb-8"><?php echo $info_1; ?></p>
+                        <p class="text-[16px] mb-8"><?php echo $info_1; ?></p>
                     </div>
-                    <div class="text-[18px]">
-                        <p class="mb-1"><?php echo $subtitle_2; ?></p>
-                        <div class="w-[50%] h-6 bg-white border-2 border-[#036855] rounded-full overflow-hidden relative">
+                    <div class="">
+                        <p class="mb-1 text-[18px]"><?php echo $subtitle_2; ?></p>
+                        <div class="w-[50%] h-6 mb-1 bg-white border border-[#036855] rounded-full overflow-hidden relative">
                             <div class="h-full bg-primary w-[75%] rounded-full"></div>
                         </div>
-                        <p class="mb-8"><?php echo $info_2; ?></p>
+                        <p class="mb-8 text-[16px]"><?php echo $info_2; ?></p>
                     </div>
                 </div>
 
