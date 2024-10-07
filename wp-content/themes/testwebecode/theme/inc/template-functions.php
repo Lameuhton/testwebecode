@@ -205,6 +205,9 @@ function testwebecode_html5_comment( $comment, $args, $depth ) {
 	<?php
 }
 
+//----------------------------------------------
+// Block 6: API Call tree counter
+//----------------------------------------------
 function get_api_value() {
     // Effectuer l'appel API
     $response = wp_remote_get('https://tree-nation.com/api/forests/webecode/tree_counter'); // Remplace cette URL par ton API
