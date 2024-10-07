@@ -1,4 +1,5 @@
 <?php 
+// Bloc avec grandes cards qui se superposent au scroll (animation)
 
 $title = get_field('title'); // Titre: champ "Éditeur WYSIWYG", nom "title"
 $description = get_field('description'); // Description: champ "Éditeur WYSIWYG", nom "description"

@@ -200,6 +200,8 @@ if ( function_exists('acf_register_block_type') ) {
 		// Couleur de fond: champ "True/false", nom "background_color"
 		// Option inverser l'image et le texte: champ "True/False", nom "reverse_text_image"
 
+		// Bloc avec fond de couleur (primary) qui prend toute la largeur + titre, description, bouton à gauche et image à droite
+
 		acf_register_block_type(array(
             'name'              => 'block_1',
             'title'             => __('Block 1'),
@@ -224,6 +226,8 @@ if ( function_exists('acf_register_block_type') ) {
 			// - Titre: champ "Éditeur WYSIWYG", nom "card_title"
 			// - Icone: champ "image", nom "card_image"
 		
+		// Bloc avec grid 3x2 de cards avec icone et description
+
 		acf_register_block_type(array(
             'name'              => 'block_2',
             'title'             => __('Block 2'),
@@ -249,6 +253,8 @@ if ( function_exists('acf_register_block_type') ) {
 			// - Titre: champ "texte", nom "title"
 			// - Description: champ "zone de texte", nom "description"
 		
+		// Bloc avec des présentations services en 4 colonnes (icones, titre, description)
+
 		acf_register_block_type(array(
             'name'              => 'block_3',
             'title'             => __('Block 3'),
@@ -273,6 +279,8 @@ if ( function_exists('acf_register_block_type') ) {
 			// - Icone: champ "image", nom "icon"
 			// - Titre: champ "texte", nom "title"
 			// - Description: champ "Éditeur WYSIWYG", nom "description"
+
+		// Bloc accordéon avec menus cliquables déroulants
 		
 		acf_register_block_type(array(
             'name'              => 'block_4',
@@ -299,6 +307,8 @@ if ( function_exists('acf_register_block_type') ) {
 			// - Sous-titre: champ "texte", nom "subtitle"
 			// - Description: champ "Éditeur WYSIWYG", nom "description"
 		// Option couleur de fond dernière card: champ "True/False", nom "last_card_option"
+
+		// Bloc avec grandes cards qui se superposent au scroll (animation)
 		
 		acf_register_block_type(array(
             'name'              => 'block_5',

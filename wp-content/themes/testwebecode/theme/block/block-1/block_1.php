@@ -1,4 +1,5 @@
 <?php 
+// Bloc avec fond de couleur (primary) qui prend toute la largeur + titre, description, bouton à gauche et image à droite
 
 $title = get_field('title'); // Titre: champ "texte", nom "title"
 $description = get_field('description'); // Description: champ "Éditeur WYSIWYG", nom "description"

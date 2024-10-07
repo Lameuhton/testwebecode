@@ -1,4 +1,5 @@
 <?php 
+// Bloc accordéon avec menus cliquables déroulants
 
 $title = get_field('title'); // Titre: champ "texte", nom "title"
 $text = get_field('text'); // Texte: champ "zone de texte", nom "text"

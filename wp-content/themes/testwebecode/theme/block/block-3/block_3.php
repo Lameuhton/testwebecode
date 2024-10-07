@@ -1,4 +1,5 @@
 <?php
+// Bloc avec des présentations services en 3 colonnes (icones, titre, description)
 
 $title = get_field('title'); // Titre: champ "texte", nom "title"
 $description = get_field('description'); // Description: champ "Éditeur WYSIWYG", nom "description"

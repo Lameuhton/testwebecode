@@ -1,4 +1,5 @@
 <?php
+// Bloc avec grid 3x2 de cards avec icone et description
 
 $title = get_field('title'); // Titre: champ "texte", nom "title"
 $description = get_field('description'); // Description: champ "Éditeur WYSIWYG", nom "description"
