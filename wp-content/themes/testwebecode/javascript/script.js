@@ -9,7 +9,10 @@
  * https://esbuild.github.io/
  */
 
+// ------------------------------------------
 // Block 2 hover animation
+// ------------------------------------------
+
 document.addEventListener('DOMContentLoaded', function () {
 	const cards = document.querySelectorAll('.card');
 
@@ -25,7 +28,10 @@ document.addEventListener('DOMContentLoaded', function () {
 	});
 });
 
-//block 4 accordion animation
+// ------------------------------------------
+// Block 4 accordion animation
+// ------------------------------------------
+
 document.addEventListener('DOMContentLoaded', function() {
     function toggleAccordion(element) {
         const content = element.nextElementSibling;
@@ -56,7 +62,9 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-// block 5 parallax animation
+// ------------------------------------------
+// Block 5 parallax animation
+// ------------------------------------------
 
 //Définir la variable --index pour chaque Card
 document.addEventListener("DOMContentLoaded", function() {
@@ -78,6 +86,9 @@ document.addEventListener("DOMContentLoaded", function() {
 
 });
 
+// ------------------------------------------
+// Block 8 button animation + circle values animation
+// ------------------------------------------
 
 document.addEventListener('DOMContentLoaded', function () {
 	const btn1 = document.getElementById('btn1');
