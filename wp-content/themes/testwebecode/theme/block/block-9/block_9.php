@@ -5,12 +5,6 @@ $title = get_field('title'); // Titre: champ "texte", nom "title"
 $description = get_field('description'); // Description: champ "Zone de texte", nom "description"
 $image = get_field('image'); // Image: champ "image", nom "image"
 $link = get_field('button'); // Boutton: champ "lien", nom "button"
-$use_custom_color = get_field('background_color'); // Couleur de fond: champ "True/False", nom "background_color"
-$use_reverse = get_field('reverse_text_image'); // Option inverser l'image et le texte: champ "True/False", nom "reverse_text_image"
-
-$background_class = $use_custom_color ? 'bg-white' : 'bg-primary';
-$text_class = $use_custom_color ? 'text-primary' : 'text-white';
-
 ?>
 
 

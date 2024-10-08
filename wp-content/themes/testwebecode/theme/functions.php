@@ -401,6 +401,25 @@ if ( function_exists('acf_register_block_type') ) {
             ),
         ));
 
+		// Block 10
+		// Détail des champs dans le fichier block-10.php
+		// Bloc avec image et description + section blanche avec 3 parties en colonnes
+
+		acf_register_block_type(array(
+            'name'              => 'block_10',
+            'title'             => __('Block 10'),
+            'description'       => __("Bloc avec image et description + section blanche avec 3 parties en colonnes"),
+            'render_template'   => 'block/block-10/block_10.php',
+            'category'          => 'formatting',
+            'icon'              => 'admin-comments',
+            'keywords'          => array('test', 'custom', 'acf', 'block', 'accueil'),
+            'supports'          => array(
+                'align' => true,
+                'anchor' => true,
+                'customClassName' => true,
+            ),
+        ));
+
     }
     add_action('acf/init', 'my_acf_init_block_types');
 
