@@ -382,6 +382,25 @@ if ( function_exists('acf_register_block_type') ) {
             ),
         ));
 
+		// Block 9
+		// Détail des champs dans le fichier block-9.php
+		// Bloc avec titre description bouton à gauche et image à droite
+
+		acf_register_block_type(array(
+            'name'              => 'block_9',
+            'title'             => __('Block 9'),
+            'description'       => __("Bloc avec titre description bouton à gauche et image à droite"),
+            'render_template'   => 'block/block-9/block_9.php',
+            'category'          => 'formatting',
+            'icon'              => 'admin-comments',
+            'keywords'          => array('test', 'custom', 'acf', 'block', 'accueil'),
+            'supports'          => array(
+                'align' => true,
+                'anchor' => true,
+                'customClassName' => true,
+            ),
+        ));
+
     }
     add_action('acf/init', 'my_acf_init_block_types');
 
