@@ -10,10 +10,10 @@ $link = get_field('button'); // Boutton: champ "lien", nom "button"
 
 <section class="w-full relative my-44">
     <!-- Rectangle bleu en arrière-plan -->
-    <div class="absolute bottom-0 right-0 w-[30%] h-[900px] bg-primary z-0"></div>
+    <div class="absolute bottom-0 right-0 w-[30%] h-[900px] bg-primary z-0 hidden md:block"></div>
 
-    <div class="sides-page-margin grid grid-cols-12 items-center relative z-10">
-        <div class="flex flex-col col-start-1 col-end-6">
+    <div class="sides-page-margin flex flex-col gap-5 md:gap-0 md:grid md:grid-cols-12 items-center relative z-10">
+        <div class="flex flex-col col-start-1 col-end-6 order-2 md:order-none">
             <h1 class="h1 mb-3"><?php echo esc_html($title) ?></h1>
             <div class="font-text text-[20px] leading-[24px] flex flex-col gap-7 prose prose-p:m-0">
                 <?php echo $description; ?>
@@ -29,7 +29,7 @@ $link = get_field('button'); // Boutton: champ "lien", nom "button"
             <?php endif; ?>
         </div>
 
-        <div class="col-start-7 col-end-13 relative z-10">
+        <div class="order-1 md:order-none col-start-7 col-end-13 relative z-10">
             <?php
             if ($image) :
                 ?>

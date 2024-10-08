@@ -15,20 +15,20 @@ $button_3 = get_field('button_3'); // Bouton 3: champ "lien", nom "button_3"
 ?>
 
 
-<section class="sides-page-margin grid grid-cols-12 grid-row-2 items-center w-full my-44 gap-x-5">
-    <div class="col-start-1 col-end-6 row-start-1 row-end-3">
+<section class="sides-page-margin grid md:grid-cols-12 md:grid-row-2 items-center w-full my-44 gap-5">
+    <div class="md:col-start-1 md:col-end-7 medium:col-end-6 md:row-start-1 md:row-end-3">
         <?php
         if ($image) :
             ?>
-            <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" class="w-full" />
+            <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" class="md:w-full w-[60%]" />
         <?php endif; ?>
     </div>
 
-    <div class="flex flex-col col-start-7 col-end-13 row-start-1 row-end-2">
+    <div class="flex flex-col md:col-start-7 md:col-end-13 md:row-start-1 md:row-end-2">
         <h2 class="h2"><?php echo esc_html($title) ?></h2>
     </div>
 
-    <div class="col-start-2 col-end-13 row-start-2 row-end-3 bg-white grid grid-cols-3 gap-x-10 px-12 py-9">
+    <div class="md:col-start-2 md:col-end-13 md:row-start-2 md:row-end-3 bg-white grid md:grid-cols-3 gap-7 md:gap-10 px-12 py-9">
         <div class="flex flex-col gap-1 px-3">
             <h3 class="h3"><?php echo esc_html($subtitle_1) ?></h3>
             <p class="paragraph"><?php echo $description_subtitle_1; ?></p>
