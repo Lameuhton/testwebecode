@@ -120,7 +120,7 @@ document.addEventListener('DOMContentLoaded', function () {
 	}
 
 	function updateValues(energy, co2, weight) {
-		// Met à jour les valeurs et les cercles
+		// Mettre à jour les valeurs et les cercles
 		energyValue.textContent = energy + '%';
 		co2Value.textContent = co2 + '%';
 		weightValue.textContent = weight + '%';
@@ -140,7 +140,7 @@ document.addEventListener('DOMContentLoaded', function () {
 		btn2.classList.remove('active');
 
 		// Mettre à jour les valeurs pour un site web standard
-		updateValues(65, 85, 75); // Chiffres à ajuster selon ton contexte
+		updateValues(65, 85, 75); // Chiffres à ajuster selon le contexte
 	});
 
 	// Quand on clique sur le deuxième bouton (Site web éco-conçu)
@@ -150,6 +150,6 @@ document.addEventListener('DOMContentLoaded', function () {
 		btn1.classList.remove('active');
 
 		// Mettre à jour les valeurs pour un site web éco-conçu
-		updateValues(30, 45, 50); // Chiffres à ajuster selon ton contexte
+		updateValues(30, 45, 50); // Chiffres à ajuster selon le contexte
 	});
 });

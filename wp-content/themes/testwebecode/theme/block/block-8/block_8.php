@@ -1,5 +1,7 @@
 <!--
 Bloc flexible avec plusieurs cards qui comparent site web normal et site web éco-responsable
+- Pour l'animation des boutons, j'ai utilisé du JS pour déplacer le slider et changer la couleur des boutons (script.js)
+- Pour les cercles, j'ai utilisé du CSS et du JS (components.css)
 
 CHAMPS ACF:
 - Champ type "Contenu flexible", libellé "Blocs de contenu", nom "content_blocks"
@@ -40,16 +42,16 @@ CHAMPS ACF:
 
             <!-- Block: Comparison site -->
             <?php if ($layout == 'block_comparison_site'): ?>
-                <div class="md:col-span-12 row-start-1 flex justify-between rounded-3xl text-white bg-primary pl-8 pr-16 pt-11 pb-24 md:relative top-[35px] z-10">
-                    <div class="flex flex-col justify-between items-start gap-6">
+                <div class="md:col-span-12 row-start-1 flex flex-col md:flex-row justify-between rounded-3xl text-white bg-primary px-7 md:pl-8 md:pr-8 medium:pr-16 pt-11 pb-10 md:pb-24 md:relative top-[35px] z-10">
+                    <div class="flex flex-col justify-center medium:justify-between items-start gap-12 medium:gap-6">
                         <!-- Toggle buttons -->
-                        <div id="toggle" class="relative w-[425px] bg-white rounded-full flex items-center justify-between py-2">
+                        <div id="toggle" class="relative w-full text-[14px] sm:text-[16px] sm:w-[80%] medium:w-[425px] bg-white rounded-full flex items-center justify-between self-center py-2">
                             <div id="slider" class="absolute h-full w-[50%] bg-gradient-to-r from-[#058D8F] to-[#036855] rounded-full transition-all duration-300 "></div>
                             <button id="btn1" class="relative z-10 w-1/2 text-center text-white font-bold active"><?php echo $option_1; ?></button>
                             <button id="btn2" class="relative z-10 w-1/2 text-center text-primary font-bold"><?php echo $option_2; ?></button>
                         </div>
 
-                        <div class="comparison-grid grid grid-cols-3 gap-8">
+                        <div class="comparison-grid medium:grid medium:grid-cols-3 flex flex-wrap-reverse self-center justify-center gap-5 medium:gap-8 mb-10 md:mb-0">
                             <!-- Comparaison 1: Consommation d'énergie -->
                             <div class="comparison-item flex flex-col items-center">
                                 <div class="circular-progress">
@@ -96,7 +98,7 @@ CHAMPS ACF:
                     </div>
 
                     <!-- Description block on the right -->
-                    <p class="text-white px-10 py-12 border border-white rounded-3xl w-[40%] text-[20px]"><?php echo $description; ?></p>
+                    <p class="text-white px-7 md:px-10 py-9 md:py-12 border border-white rounded-3xl md:w-[40%] text-[18px] md:text-[20px]"><?php echo $description; ?></p>
                 </div>
 
 
@@ -118,8 +120,8 @@ CHAMPS ACF:
                 
             <!-- Block: page loading comparison -->
             <?php elseif ($layout == 'page_loading_comparison_block'): ?>
-                <div class="md:col-span-5 bg-white rounded-3xl shadow-xl md:pt-20 md:pb-7 pl-9 pr-3 text-primary z-20">
-                    <p class="text-[24px] font-bold mb-4"><?php echo $title; ?></p>
+                <div class="md:col-span-5 bg-white rounded-3xl shadow-xl pt-10 md:pt-20 md:pb-7 md:pl-9 md:pr-3 px-7 text-primary z-20">
+                    <p class="text-[20px] sm:text-[24px] font-bold mb-4"><?php echo $title; ?></p>
                     <div class="">
                         <p class="mb-1 text-[18px]"><?php echo $subtitle_1; ?></p>
                         <div class="w-[50%] h-6 mb-1 bg-white border border-[#036855] rounded-full overflow-hidden relative">
