@@ -20,7 +20,7 @@ $button_3 = get_field('button_3'); // Bouton 3: champ "lien", nom "button_3"
         <?php
         if ($image) :
             ?>
-            <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" class="md:w-full w-[60%]" />
+            <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" class="md:w-full w-full sm:w-[60%]" />
         <?php endif; ?>
     </div>
 
@@ -28,7 +28,7 @@ $button_3 = get_field('button_3'); // Bouton 3: champ "lien", nom "button_3"
         <h2 class="h2"><?php echo esc_html($title) ?></h2>
     </div>
 
-    <div class="md:col-start-2 md:col-end-13 md:row-start-2 md:row-end-3 bg-white grid md:grid-cols-3 gap-7 md:gap-10 px-12 py-9">
+    <div class="md:col-start-2 md:col-end-13 md:row-start-2 md:row-end-3 bg-white grid md:grid-cols-3 gap-7 md:gap-10 px-5 sm:px-12 py-9">
         <div class="flex flex-col gap-1 px-3">
             <h3 class="h3"><?php echo esc_html($subtitle_1) ?></h3>
             <p class="paragraph"><?php echo $description_subtitle_1; ?></p>
