@@ -255,3 +255,7 @@ button {
     margin: 0;
 }
 
+
+.last-menu-item li {
+    list-style: none;
+}

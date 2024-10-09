@@ -8,7 +8,7 @@ $link = get_field('button'); // Boutton: champ "lien", nom "button"
 ?>
 
 
-<section class="w-full relative my-44">
+<section class="w-full relative mb-44">
     <!-- Rectangle bleu en arrière-plan -->
     <div class="absolute bottom-0 right-0 w-[30%] h-[900px] bg-primary z-0 hidden md:block"></div>
 
