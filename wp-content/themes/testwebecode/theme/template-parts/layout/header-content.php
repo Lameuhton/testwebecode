@@ -19,9 +19,10 @@ if ($is_contact_page) {
 
 // Changer le lien du logo en fonction de la page
 $logo_link = $is_contact_page ? 'http://template-main.test/wp-content/uploads/2024/10/logo-webecode@3x-1-1.png' : 'http://template-main.test/wp-content/uploads/2024/10/logo-webecode@3x-1.png';
+$bg_class = $is_contact_page ? 'bg-primary' : '';
 ?>
 
-<header class="sides-page-margin w-full gap-14 flex items-baseline relative z-40 pt-12 pb-20">
+<header class="sides-page-margin w-full gap-14 flex items-baseline relative z-40 pt-12 pb-20 <?php echo $bg_class ?>">
     <!-- Logo -->
     <div class="flex items-center">
         <a href="<?php echo home_url(); ?>">

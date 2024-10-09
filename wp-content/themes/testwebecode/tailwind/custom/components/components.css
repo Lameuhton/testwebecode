@@ -259,3 +259,35 @@ button {
 .last-menu-item li {
     list-style: none;
 }
+
+/* ------------------------------------------------------------*/
+/* (block 11) Style for form fields */
+/* ------------------------------------------------------------*/
+
+/* Style des champs de texte */
+.wpcf7-form-control.wpcf7-text, 
+.wpcf7-form-control.wpcf7-email, 
+.wpcf7-form-control.wpcf7-textarea {
+    width: 100%; /* Prend toute la largeur disponible */
+    padding-block: 10px; /* Espace à l'intérieur du champ */
+    padding-inline: 15px; /* Espace à l'intérieur du champ */
+    border: 1px solid #B7B7B7; /* Bordure grise */
+    margin-bottom: 15px; /* Espacement entre les champs */
+    font-size: 16px; /* Taille du texte */
+}
+
+/* Style du bouton d'envoi */
+.wpcf7-submit {
+    background-color: #0F3030; /* Couleur de fond du bouton */
+    width: 100%; /* Prend toute la largeur disponible */
+    color: white; /* Couleur du texte */
+    padding: 12px 20px; /* Espacement interne */
+    border: none; /* Enlever la bordure */
+    font-size: 16px;
+    cursor: pointer; /* Change le curseur au survol */
+}
+
+/* Placeholder style */
+.wpcf7-form-control::placeholder {
+    color: #0F3030; /* Couleur de texte plus foncée pour les placeholders */
+}

@@ -420,6 +420,25 @@ if ( function_exists('acf_register_block_type') ) {
             ),
         ));
 
+		// Block 11
+		// Détail des champs dans le fichier block-11.php
+		// Bloc de contact avec formulaire
+
+		acf_register_block_type(array(
+			'name'              => 'block_11',
+			'title'             => __('Block 11'),
+			'description'       => __("Bloc de contact avec formulaire"),
+			'render_template'   => 'block/block-11/block_11.php',
+			'category'          => 'formatting',
+			'icon'              => 'admin-comments',
+			'keywords'          => array('test', 'custom', 'acf', 'block', 'accueil'),
+			'supports'          => array(
+				'align' => true,
+				'anchor' => true,
+				'customClassName' => true,
+			),
+		));
+
     }
     add_action('acf/init', 'my_acf_init_block_types');
 
