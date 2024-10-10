@@ -7,12 +7,12 @@
  * @package test_webecode
  */
 
- // Déterminer la page actuelle
+// Déterminer la page actuelle
 $is_contact_page = is_page('Contactez-nous');
 $is_home_page = is_page('Exemple accueil');
 
 // Définir la classe du <ul> en fonction de la page
-$ul_class = 'menu flex space-x-8 items-center justify-start gap-8';
+$ul_class = 'menu flex flex-col md:flex-row items-center md:justify-start justify-end gap-8';
 if ($is_contact_page) {
     $ul_class .= ' text-white'; // Ajoute "text-white" si on est sur la page Contact
 }
@@ -22,7 +22,7 @@ $logo_link = $is_contact_page ? 'http://template-main.test/wp-content/uploads/20
 $bg_class = $is_contact_page ? 'bg-primary' : '';
 ?>
 
-<header class="hidden sides-page-margin w-full gap-14 flex items-baseline relative z-40 pt-12 pb-20 <?php echo $bg_class ?>">
+<header class="sides-page-margin w-full gap-14 flex items-baseline relative z-40 md:pt-12 md:pb-20 py-12<?php echo $bg_class ?>">
     <!-- Logo -->
     <div class="flex items-center">
         <a href="<?php echo home_url(); ?>">
@@ -30,8 +30,25 @@ $bg_class = $is_contact_page ? 'bg-primary' : '';
         </a>
     </div>
 
+    <!-- Bouton du menu burger pour mobile -->
+    <div class="ml-auto md:hidden">
+        <button id="burger-button" class="text-black">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+            </svg>
+        </button>
+    </div>
+
     <!-- Navigation Menu -->
-    <nav class="flex justify-between space-x-8 text-black w-full font-text">
+    <nav id="mobile-menu" class="fixed right-0 top-0 w-3/4 h-full bg-white transform translate-x-full transition-transform duration-300 ease-in-out z-50 md:relative md:transform-none md:translate-x-0 md:w-full md:bg-transparent md:h-auto md:flex justify-between font-text text-black">
+        <div class="flex justify-end items-center px-5 pt-24 mb-5 md:hidden">
+            <button id="close-button" class="text-black flex justify-end">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+        </div>
+
         <?php
         // Capture la sortie du menu
         $menu = wp_nav_menu( array(
@@ -56,13 +73,27 @@ $bg_class = $is_contact_page ? 'bg-primary' : '';
         echo '</ul>';
 
         // Transformer le dernier <li> en div et l'afficher
-        $last_item = preg_replace('/^<li(.*?)>(.*)<\/li>$/', '<div class="last-menu-item font-text text-white border border-white px-10 py-3"$1>$2</div>', $last_item);
+        $last_item = preg_replace('/^<li(.*?)>(.*)<\/li>$/', '<div class="last-menu-item font-text text-primary md:text-white border md:border-white text-centerborder-primary px-3 md:px-10 py-3 mt-5 md:mt-0"$1>$2</div>', $last_item);
         echo $last_item; // Affiche le dernier élément en tant que div
         ?>
     </nav>
 </header>
 
+<!-- JavaScript pour contrôler l'ouverture/fermeture du menu mobile -->
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const burgerButton = document.getElementById('burger-button');
+        const closeButton = document.getElementById('close-button');
+        const mobileMenu = document.getElementById('mobile-menu');
 
+        // Ouvrir le menu mobile
+        burgerButton.addEventListener('click', function () {
+            mobileMenu.classList.remove('translate-x-full');
+        });
 
-
-<!-- #masthead -->
+        // Fermer le menu mobile
+        closeButton.addEventListener('click', function () {
+            mobileMenu.classList.add('translate-x-full');
+        });
+    });
+</script>
