@@ -30,4 +30,8 @@
     .sides-page-margin {
         @apply px-5 lg:px-36
     }
+
+    .text-gradient {
+        @apply bg-gradient-to-r from-accent to-secondary text-transparent bg-clip-text font-bold;
+    }
 }

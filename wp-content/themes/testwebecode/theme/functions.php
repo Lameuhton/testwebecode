@@ -439,6 +439,25 @@ if ( function_exists('acf_register_block_type') ) {
 			),
 		));
 
+		// Block 12
+		// Détail des champs dans le fichier block-12.php
+		// Bloc pour le nouveau site, 2 cards blanche et une primary en dessous avec du texte
+
+		acf_register_block_type(array(
+			'name'              => 'block_12',
+			'title'             => __('Block 12'),
+			'description'       => __("Bloc pour le nouveau site, 2 cards blanche et une primary en dessous avec du texte"),
+			'render_template'   => 'block/block-12/block_12.php',
+			'category'          => 'formatting',
+			'icon'              => 'admin-comments',
+			'keywords'          => array('test', 'custom', 'acf', 'block', 'accueil'),
+			'supports'          => array(
+				'align' => true,
+				'anchor' => true,
+				'customClassName' => true,
+			),
+		));
+
     }
     add_action('acf/init', 'my_acf_init_block_types');
 

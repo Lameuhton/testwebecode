@@ -22,7 +22,7 @@ $logo_link = $is_contact_page ? 'http://template-main.test/wp-content/uploads/20
 $bg_class = $is_contact_page ? 'bg-primary' : '';
 ?>
 
-<header class="sides-page-margin w-full gap-14 flex items-baseline relative z-40 pt-12 pb-20 <?php echo $bg_class ?>">
+<header class="hidden sides-page-margin w-full gap-14 flex items-baseline relative z-40 pt-12 pb-20 <?php echo $bg_class ?>">
     <!-- Logo -->
     <div class="flex items-center">
         <a href="<?php echo home_url(); ?>">
